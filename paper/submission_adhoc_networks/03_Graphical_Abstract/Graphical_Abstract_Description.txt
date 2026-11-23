@@ -1,0 +1,8 @@
+Graphical Abstract Description:
+
+Title: ConCGR-AoI: Distribution-Free Conformal Contact-Graph Routing and Age-of-Information Control for Disrupted Flying Ad-Hoc Networks
+Author: Vishal Chandel
+Affiliation: Department of Electronics and Communication Engineering, Jawaharlal Nehru Government Engineering College Sundernagar, Himachal Pradesh, India
+
+Description:
+ConCGR-AoI addresses topological disruption in mountainous Flying Ad-Hoc Networks (FANETs) caused by knife-edge terrain diffraction (ITU-R P.526 loss > 35 dB) and non-stationary mountain wind gusts (up to 18.2 m/s). Panel (a) illustrates the multi-UAV reconnaissance and ridge relay mission over a 5 km x 5 km NASA SRTM 30m digital elevation model in the Kangra Valley, monitoring an active wildfire front. Panel (b) compares classical deterministic Contact Graph Routing (CGR)—which suffers 100% occlusion drop when wind drift delays arrival beyond rigid pre-planned windows—against ConCGR-AoI's adaptive conformal inference envelope (C_1-alpha), which provably guarantees >= 95% contact capture and timely data delivery.

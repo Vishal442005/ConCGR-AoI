@@ -1,0 +1,44 @@
+\begin{table*}[t]
+\centering
+\caption{Physical Layer IEEE 802.11p Scalability and Contention Benchmark across Mountainous SRTM DEM ($B = 8\text{ MB}$, Means $\pm$ Std. Dev. over $N_{\text{seeds}} = 3$ Missions).}
+\label{tab:ns3_scalability}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+\textbf{Protocol} & \textbf{Swarm ($N$)} & \textbf{BDR (\%)} & \textbf{P95 AoI (s)} & \textbf{Overhead} & \textbf{Total Packets} & \textbf{MAC Collisions} & \textbf{Solve ($\mu$s)} \\
+\midrule
+\multicolumn{8}{l}{\textit{Swarm Size $N = 10$ UAVs ($5\times 5\text{ km}^2$ Kangra Relief)}} \\
+Connected-FANET & 10 & $7.2 \pm 3.1$ & $0.9 \pm 0.0$ & $0.9\times$ & 706 & 15 & 0.1 \\
+Spray-and-Wait & 10 & $11.9 \pm 3.9$ & $1.9 \pm 0.0$ & $38.3\times$ & 23,190 & 5,689 & 18.7 \\
+Deterministic-CGR & 10 & $38.9 \pm 20.0$ & $435.0 \pm 228.0$ & $77.8\times$ & 111,240 & 5,308 & 17.8 \\
+PRoPHETv2 & 10 & $19.7 \pm 9.3$ & $81.2 \pm 109.6$ & $186.3\times$ & 144,125 & 22,213 & 43.1 \\
+Epidemic & 10 & $23.9 \pm 9.9$ & $73.2 \pm 96.4$ & $181.5\times$ & 198,448 & 33,866 & 53.0 \\
+\textbf{ConCGR-AoI} & 10 & $\mathbf{6.8 \pm 3.7}$ & $\mathbf{73.6 \pm 96.0}$ & $\mathbf{65.2\times}$ & \textbf{19,079} & \textbf{5,412} & \textbf{9.1} \\
+\midrule
+\multicolumn{8}{l}{\textit{Swarm Size $N = 20$ UAVs ($5\times 5\text{ km}^2$ Kangra Relief)}} \\
+Connected-FANET & 20 & $6.2 \pm 1.9$ & $1.0 \pm 0.0$ & $0.9\times$ & 1,321 & 74 & 0.1 \\
+Spray-and-Wait & 20 & $9.8 \pm 3.4$ & $1.9 \pm 0.1$ & $50.3\times$ & 49,568 & 41,951 & 33.0 \\
+Deterministic-CGR & 20 & $60.3 \pm 20.6$ & $525.6 \pm 101.2$ & $104.8\times$ & 539,903 & 69,368 & 60.4 \\
+PRoPHETv2 & 20 & $27.5 \pm 13.0$ & $264.9 \pm 366.1$ & $443.3\times$ & 1,002,957 & 229,346 & 227.2 \\
+Epidemic & 20 & $26.1 \pm 9.8$ & $105.6 \pm 139.8$ & $560.4\times$ & 1,443,909 & 282,726 & 281.6 \\
+\textbf{ConCGR-AoI} & 20 & $\mathbf{6.4 \pm 2.4}$ & $\mathbf{95.7 \pm 80.4}$ & $\mathbf{59.5\times}$ & \textbf{36,362} & \textbf{44,060} & \textbf{20.9} \\
+\midrule
+\multicolumn{8}{l}{\textit{Swarm Size $N = 30$ UAVs ($5\times 5\text{ km}^2$ Kangra Relief)}} \\
+Connected-FANET & 30 & $5.8 \pm 0.4$ & $1.0 \pm 0.0$ & $0.9\times$ & 1,971 & 275 & 0.1 \\
+Spray-and-Wait & 30 & $9.0 \pm 0.6$ & $1.9 \pm 0.1$ & $45.3\times$ & 71,355 & 109,894 & 58.5 \\
+Deterministic-CGR & 30 & $71.1 \pm 8.0$ & $420.2 \pm 48.3$ & $58.9\times$ & 722,429 & 195,008 & 109.7 \\
+PRoPHETv2 & 30 & $24.8 \pm 6.6$ & $179.8 \pm 153.8$ & $613.3\times$ & 2,436,504 & 550,294 & 352.3 \\
+Epidemic & 30 & $23.8 \pm 4.2$ & $181.9 \pm 137.9$ & $813.3\times$ & 3,371,042 & 657,704 & 439.1 \\
+\textbf{ConCGR-AoI} & 30 & $\mathbf{4.4 \pm 0.6}$ & $\mathbf{106.1 \pm 63.1}$ & $\mathbf{68.2\times}$ & \textbf{50,048} & \textbf{116,211} & \textbf{46.0} \\
+\midrule
+\multicolumn{8}{l}{\textit{Swarm Size $N = 40$ UAVs ($5\times 5\text{ km}^2$ Kangra Relief)}} \\
+Connected-FANET & 40 & $6.0 \pm 0.3$ & $1.0 \pm 0.0$ & $0.9\times$ & 2,573 & 676 & 0.1 \\
+Spray-and-Wait & 40 & $8.9 \pm 0.7$ & $1.9 \pm 0.0$ & $44.7\times$ & 92,925 & 211,949 & 73.8 \\
+Deterministic-CGR & 40 & $76.8 \pm 3.5$ & $373.4 \pm 40.2$ & $50.2\times$ & 880,436 & 411,427 & 186.2 \\
+PRoPHETv2 & 40 & $25.7 \pm 4.6$ & $548.0 \pm 231.6$ & $793.4\times$ & 4,667,896 & 1,022,599 & 511.4 \\
+Epidemic & 40 & $21.5 \pm 2.9$ & $200.4 \pm 135.0$ & $1280.1\times$ & 6,767,666 & 1,242,348 & 653.1 \\
+\textbf{ConCGR-AoI} & 40 & $\mathbf{4.5 \pm 0.6}$ & $\mathbf{124.3 \pm 83.9}$ & $\mathbf{61.9\times}$ & \textbf{62,624} & \textbf{223,865} & \textbf{75.5} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

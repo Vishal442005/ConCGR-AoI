@@ -1,0 +1,120 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{bekmezci2013flying}
+{\.I}.~Bekmezci, O.~K. Sahingoz, {\c{S}}.~Temel, Flying ad-hoc networks
+  ({FANETs}): A survey, Ad Hoc Networks 11~(3) (2013) 1254--1270.
+
+\bibitem{chriki2019fanet}
+A.~Chriki, H.~Touati, H.~Snoussi, {FANET}: Communication, mobility models and
+  security issues, Computer Networks 163 (2019) 106877.
+
+\bibitem{itur2019p526}
+{ITU-R}, Propagation by diffraction, Recommendation ITU-R P.526-15,
+  International Telecommunication Union (2019).
+
+\bibitem{rfc3626}
+T.~Clausen, P.~Jacquet, Optimized link state routing protocol ({OLSR}), RFC
+  3626, Internet Engineering Task Force (IETF) (2003).
+
+\bibitem{rfc9171}
+S.~Burleigh, K.~Fall, E.~Birrane, Bundle protocol version 7, RFC 9171, Internet
+  Engineering Task Force (IETF) (2022).
+
+\bibitem{caini2011delay}
+C.~Caini, H.~Cruickshank, S.~Farrell, M.~Marchese, Delay- and
+  disruption-tolerant networking ({DTN}) for satellite communications,
+  Proceedings of the IEEE 99~(11) (2011) 1980--1997.
+
+\bibitem{vahdat2000epidemic}
+A.~Vahdat, D.~Becker, Epidemic routing for partially connected ad hoc networks,
+  Technical Report CS-2000-06, Department of Computer Science, Duke University
+  (2000).
+
+\bibitem{lindgren2003probabilistic}
+A.~Lindgren, A.~Doria, O.~Schel{\'e}n, Probabilistic routing in intermittently
+  connected networks, ACM SIGMOBILE Mobile Computing and Communications Review
+  7~(3) (2003) 19--20.
+
+\bibitem{kaul2012real}
+S.~Kaul, R.~Yates, M.~Gruteser, Real-time status: How often should one update?,
+  in: Proceedings of IEEE INFOCOM, 2012, pp. 2731--2735.
+
+\bibitem{yates2021age}
+R.~D. Yates, Y.~Sun, D.~R. Bliss, S.~Bhashyam, P.~Popovski, Age of information:
+  An introduction and survey, IEEE Journal on Selected Areas in Communications
+  39~(5) (2021) 1183--1210.
+
+\bibitem{burleigh2011contact}
+S.~Burleigh, A.~Hooke, J.~L. Torgerson, K.~Fall, V.~Cerf, Contact graph
+  routing, IEEE Communications Magazine 49~(5) (2011) 56--63.
+
+\bibitem{fraire2017routing}
+J.~A. Fraire, R.~Babbar, J.~M. Finochietto, Routing in delay-tolerant space
+  networks: Contact graph routing and its variants, IEEE Communications
+  Magazine 55~(5) (2017) 188--195.
+
+\bibitem{arani2015contact}
+G.~Araniti, N.~Bezzo, S.~Burleigh, J.~M. Finochietto, J.~A. Fraire, A.~Munjal,
+  Contact graph routing in delay tolerant networks: challenges and future
+  perspectives, IEEE Aerospace and Electronic Systems Magazine 30~(5) (2015)
+  38--46.
+
+\bibitem{sun2017update}
+Y.~Sun, E.~Uysal-Biyikoglu, R.~D. Yates, C.~E. Koksal, N.~B. Shroff, Update or
+  wait: How to keep your data fresh, IEEE Transactions on Information Theory
+  63~(11) (2017) 7492--7508.
+
+\bibitem{kosta2017age}
+A.~Kosta, N.~Pappas, V.~Angelakis, Age of information: A new concept, metric,
+  and tool, Foundations and Trends in Networking 12~(3) (2017) 162--259.
+
+\bibitem{gibbs2021adaptive}
+I.~Gibbs, E.~Cand{\`e}s, Adaptive conformal inference under distribution shift,
+  in: Advances in Neural Information Processing Systems (NeurIPS), Vol.~34,
+  2021, pp. 1660--1672.
+
+\bibitem{angelopoulos2023gentle}
+A.~N. Angelopoulos, S.~Bates, A gentle introduction to conformal prediction and
+  distribution-free uncertainty quantification, Foundations and Trends in
+  Machine Learning 16~(4) (2023) 494--591.
+
+\bibitem{barber2021predictive}
+R.~F. Barber, E.~J. Cand{\`e}s, A.~Ramdas, R.~J. Tibshirani, Predictive
+  inference with the jackknife+, The Annals of Statistics 49~(1) (2021)
+  486--507.
+
+\bibitem{guillen2021review}
+A.~Guillen-Perez, R.~Sanchez-Iborra, Review on physical and {MAC} layer
+  protocols for {UAV}-aided networks, IEEE Access 9 (2021) 24898--24912.
+
+\bibitem{samir2020age}
+M.~Samir, C.~Assi, S.~Sharafeddine, D.~Ebrahimi, A.~Ghrayeb, Age of information
+  aware trajectory planning of {UAVs} in intelligent transportation systems: A
+  deep learning approach, IEEE Transactions on Vehicular Technology 69~(11)
+  (2020) 12382--12395.
+
+\bibitem{abdelmagid2019average}
+M.~A. Abd-Elmagid, H.~S. Dhillon, Average peak age-of-information minimization
+  in {UAV}-assisted {IoT} networks, IEEE Transactions on Vehicular Technology
+  68~(2) (2019) 2003--2008.
+
+\bibitem{dai2023delay}
+Z.~Dai, C.~H. Liu, G.~Wang, J.~Dai, J.~Tang, Delay-sensitive energy-efficient
+  {UAV} crowdsensing by deep reinforcement learning, IEEE Transactions on
+  Mobile Computing 22~(4) (2023) 2038--2052.
+
+\bibitem{vovk2005algorithmic}
+V.~Vovk, A.~Gammerman, G.~Shafer, Algorithmic Learning in a Random World,
+  Springer, 2005.
+
+\bibitem{farr2007shuttle}
+T.~G. Farr, P.~A. Rosen, E.~Caro, R.~Crippen, R.~Duren, S.~Hensley, M.~Kobrick,
+  M.~Paller, E.~Rodriguez, L.~Roth, et~al., The shuttle radar topography
+  mission, Reviews of Geophysics 45~(2) (2007) RG2004.
+
+\end{thebibliography}

@@ -1,0 +1,33 @@
+# =============================================================================
+# Git Ignore for ConCGR-AoI Research Workspace
+# =============================================================================
+
+# ROS 2 & C++ Colcon Build Directories
+build/
+install/
+log/
+COLCON_IGNORE
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# LaTeX Build Intermediates (Preserves main.pdf, main.bbl, tables, and figures)
+*.aux
+*.log
+*.out
+*.spl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Editor & System Artifacts
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db

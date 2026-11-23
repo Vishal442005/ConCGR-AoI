@@ -1,0 +1,23 @@
+{
+  "dataset": "NASA Shuttle Radar Topography Mission (SRTM) 1 Arc-Second Global (30m)",
+  "tile": "N32E076",
+  "location": "Kangra Valley & Dhauladhar Mountain Ridge, Himachal Pradesh, India",
+  "lat_bounds": [
+    32.2,
+    32.245
+  ],
+  "lon_bounds": [
+    76.3,
+    76.345
+  ],
+  "grid_shape": [
+    161,
+    162
+  ],
+  "spatial_resolution_m": 30.87,
+  "elevation_min_m": 1035.0,
+  "elevation_max_m": 2139.0,
+  "elevation_mean_m": 1436.7294921875,
+  "vertical_relief_m": 1104.0,
+  "provenance": "Amazon AWS Open Data Terrain (skadi/N32/N32E076.hgt.gz)"
+}

@@ -1,0 +1,11 @@
+uint64 bundle_id
+uint32 source_id
+uint32 destination_id
+uint32 priority
+float64 t_gen
+float64 deadline_sec
+uint32 payload_size_bytes
+uint8[] payload_bytes
+uint32 replication_quota
+uint32 copy_index
+uint32[] hop_history

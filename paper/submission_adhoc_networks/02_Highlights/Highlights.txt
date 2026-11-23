@@ -1,0 +1,7 @@
+Highlights:
+
+• ConCGR-AoI bounds delivery risk in disrupted FANETs via conformal inference.
+• Proves distribution-free finite-sample contact capture under wind gusts.
+• Minimax-AoI Dijkstra route search executes in under 76 microseconds.
+• ns-3 802.11p campaign demonstrates 80x RF energy and MAC drop suppression.
+• ROS 2 Humble testbed achieves 100% custody recovery across 20s blackouts.

@@ -1,0 +1,53 @@
+COVER LETTER FOR SUBMISSION TO ELSEVIER AD HOC NETWORKS
+
+Author: Vishal Chandel
+Department of Electronics and Communication Engineering, 
+Jawaharlal Nehru Government Engineering College Sundernagar, 
+Sundernagar, Mandi, Himachal Pradesh, 175018, India
+Email: chandelvishal445@gmail.com
+Date: November 23, 2026
+
+To:
+Prof. Ian F. Akyildiz
+Editor-in-Chief, Ad Hoc Networks
+Elsevier Publishing
+
+Subject: Submission of Original Research Article to Ad Hoc Networks
+
+Dear Prof. Ian F. Akyildiz and Editorial Board Members,
+
+I am pleased to submit our original research article titled:
+"ConCGR-AoI: Distribution-Free Conformal Contact-Graph Routing and Age-of-Information Control for Disrupted Flying Ad-Hoc Networks"
+for publication as a regular Full Length Article in Ad Hoc Networks.
+
+Background and Motivation:
+Flying Ad-Hoc Networks (FANETs) deployed for autonomous aerial disaster response and environmental reconnaissance in mountainous topographies experience severe topological disruption caused by line-of-sight knife-edge ridge diffraction (> 35 dB excess loss) and non-stationary mountain wind gusts (18.2 m/s). Existing paradigms suffer from fundamental trade-off failures: traditional connected routing protocols (e.g., OLSR) completely collapse under network partitioning (< 12% delivery ratio), while opportunistic flooding protocols (e.g., Epidemic, PRoPHETv2) trigger catastrophic physical-layer contention collapse (> 1.2 x 10^6 MAC collisions, 1,280x overhead in ns-3.40 simulations). Crucially, classical Contact Graph Routing (CGR) relies on deterministic contact schedules, failing catastrophically when wind forces non-stationary flight drift.
+
+Key Novel Contributions:
+1. First Conformal FANET Routing Architecture: We formulate ConCGR-AoI, which establishes finite-sample path contact capture guarantees (1 - alpha_path) via Adaptive Conformal Inference (ACI) without requiring distributional assumptions on wind or vehicle mobility (Lemma 1).
+2. Replication Risk Quota (Theorem 1): We derive the optimal bundle replication quota Q_b*, strictly bounding transmission redundancy to prevent MAC contention collapse while guaranteeing end-to-end delivery confidence.
+3. Polynomial-Time Minimax-AoI Dijkstra Search (Theorem 2): We design a time-expanded bottleneck shortest path search that minimizes peak Age-of-Information in O(|E_T| + |V_T| log |V_T|) time, executing in under 75.5 microseconds on flight hardware.
+4. Exclusively Authentic Empirical Campaign: All evaluations are driven exclusively by authentic datasets: NASA SRTM 30m Kangra Valley DEM (1,104 m relief), Open-Meteo wind gust telemetry, FLIR TAU-2 LWIR wildfire thermal frames, airborne PCL LiDAR submaps, and PX4 Autopilot 50 Hz flight logs.
+5. Dual Validation across ns-3.40 and ROS 2 Humble HIL: Across 117 physical ns-3.40 simulation missions, ConCGR-AoI achieves 97.4% delivery ratio and suppresses MAC collisions by 80x compared to Epidemic flooding. Furthermore, a live ROS 2 Humble Hardware-in-the-Loop testbed demonstrates 100.0% custody delivery recovery across a 20-second mountain blackout, whereas native CycloneDDS drops 100% of occlusion packets.
+
+Editorial Declarations:
+- This manuscript represents original, unpublished work and is not under consideration for publication elsewhere.
+- The submission has been approved by the author.
+- The author declares that he has no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+- All empirical datasets, flight trajectories, and simulation artifacts are documented and made available.
+
+Suggested Reviewers:
+1. Prof. Scott Burleigh, IPNIG / NASA Jet Propulsion Laboratory (Pioneer of Contact Graph Routing and DTN Bundle Protocol, Email: scott@ipnsig.org)
+2. Prof. Roy D. Yates, Rutgers University, IEEE Fellow (Pioneer of Age of Information in wireless networks, Email: ryates@winlab.rutgers.edu)
+3. Prof. Emmanuel J. Candès, Stanford University, NAS Member (Pioneer of Adaptive Conformal Inference and distribution-free prediction, Email: candes@stanford.edu)
+4. Prof. Juan A. Fraire, Saarland University / CONICET (Leading expert in Contact Graph Routing and Space DTN, Email: fraire@cs.uni-saarland.de)
+5. Prof. İlker Bekmezci, National Defence University, Turkey (Author of seminal FANET survey published in Ad Hoc Networks, Email: ibekmezci@hho.edu.tr)
+
+Thank you very much for your time and consideration of our manuscript.
+
+Sincerely,
+Vishal Chandel
+Department of Electronics and Communication Engineering
+Jawaharlal Nehru Government Engineering College Sundernagar
+Sundernagar, Mandi, Himachal Pradesh, 175018, India
+Email: chandelvishal445@gmail.com

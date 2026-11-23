@@ -1,0 +1,2 @@
+Protocol,NumUavs,BufferCapMB,Seed,TotalGen,Delivered,BDR_Pct,DMR_Pct,P50_AoI_s,P95_AoI_s,P99_AoI_s,Overhead,MacCollisions,CollisionProb_Pct
+ConCGR-AoI,4,8,42,0,0,0,0,0,0,0,0,0,0

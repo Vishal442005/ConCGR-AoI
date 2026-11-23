@@ -1,0 +1,10 @@
+uint32 contact_id
+uint32 tx_uav_id
+uint32 rx_uav_id
+float64 nominal_start_time
+float64 nominal_end_time
+float64 nominal_rate_bps
+float64 conformal_start_time
+float64 conformal_end_time
+float64 conformal_volume_bits
+bool is_admitted

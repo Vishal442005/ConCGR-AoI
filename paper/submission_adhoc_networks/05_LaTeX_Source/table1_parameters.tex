@@ -1,0 +1,56 @@
+% Table 1: Comprehensive System and Environmental Parameters
+\begin{table}[t]
+\centering
+\caption{System, Topographical, and Protocol Parameters evaluated in Kangra Valley Disrupted FANET Benchmark.}
+\label{tab:system_parameters}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter Category} & \textbf{Value / Empirical Specification} \\
+\midrule
+\multicolumn{2}{l}{\textit{Topography \& Terrain Propagation}} \\
+Topographical Source & NASA SRTM 30m Digital Elevation Model \\
+Region & Kangra Valley, Himachal Pradesh ($32.1^\circ$N, $76.2^\circ$E) \\
+Terrain Area & $5.0\text{ km} \times 5.0\text{ km}$ ($161 \times 162$ elevation grid) \\
+Elevation Range & $1,240.0\text{ m}$ to $2,344.0\text{ m}$ ASL ($\Delta h = 1,104.0\text{ m}$) \\
+Diffraction Model & ITU-R P.526-15 Mountain Knife-Edge \\
+Diffraction Attenuation & Up to $34.8\text{ dB}$ excess mountain obstruction loss \\
+\midrule
+\multicolumn{2}{l}{\textit{Meteorological Dynamics (Open-Meteo Telemetry)}} \\
+Mean Wind Velocity & $8.5\text{ m/s}$ (Prevailing Westerly Corridor) \\
+Peak Wind Gusts & $18.2\text{ m/s}$ (High-altitude mountain gap turbulence) \\
+Distribution Drift & Weibull ($k = 2.1, \lambda = 9.2\text{ m/s}$) with gust shocks \\
+Contact Drift $\Delta t_{\text{contact}}$ & Up to $\pm 18.4\text{ s}$ non-stationary contact deviation \\
+\midrule
+\multicolumn{2}{l}{\textit{Avionics \& UAV Swarm Mechanics}} \\
+Swarm Dimension & $N \in \{8, 10, 20, 30, 40\}$ autonomous quadrotors \\
+Flight Controller & PX4 Autopilot v1.14 (real telemetry replay) \\
+Cruise Speed & $12.0\text{ m/s}$ to $18.0\text{ m/s}$ ground speed \\
+Operational Altitude & $150\text{ m}$ to $300\text{ m}$ AGL ($1,400\text{ m} - 2,500\text{ m}$ ASL) \\
+Mission Duration & $1,200\text{ s}$ ($20\text{ minutes}$) autonomous patrol \\
+\midrule
+\multicolumn{2}{l}{\textit{Heterogeneous Sensor Payloads}} \\
+Emergency Thermal IR & FLIR Wildfire Infrared ($12.8 - 34.4\text{ KB}$, Prio 3, $D_b = 30\text{ s}$) \\
+High-Res LiDAR & PCL Airborne UTM Submaps ($87 - 366\text{ KB}$, Prio 2, $D_b = 90\text{ s}$) \\
+Routine Telemetry & PX4 Quadrotor 50Hz logs ($5.12\text{ KB}$, Prio 1, $D_b = 240\text{ s}$) \\
+Generation Rates & Poisson processes ($0.5\text{ Hz}$ telemetry, periodic bursts) \\
+\midrule
+\multicolumn{2}{l}{\textit{PHY/MAC Layer Specifications (ns-3.40)}} \\
+Wireless Standard & IEEE 802.11p Outside Context of BSS (OCB) \\
+Carrier Frequency & $5.890\text{ GHz}$ (Bandwidth: $10\text{ MHz}$) \\
+Modulation & QPSK Rate 1/2 ($6.0\text{ Mbps}$ base data rate) \\
+Transmit Power & $+23\text{ dBm}$ ($200\text{ mW}$), Antenna Gain: $2.5\text{ dBi}$ \\
+Receiver Sensitivity & $-95.0\text{ dBm}$ (CSMA/CA CCA Energy Detection) \\
+MAC Contention & CSMA/CA ($CW_{\min} = 15, CW_{\max} = 1023$, SIFS $= 32\ \mu\text{s}$) \\
+Packet Pacing & $1,400\text{ B}$ MTU fragmentation with $2.0\text{ ms}$ pacing \\
+Buffer Capacity & $B \in \{2.0, 4.0, 8.0, 16.0\}\text{ MB}$ per UAV node \\
+\midrule
+\multicolumn{2}{l}{\textit{ConCGR-AoI Mathematical Parameters}} \\
+Target Path Error $\alpha_{\text{path}}$ & $0.05$ (guarantees $\ge 95\%$ contact reliability) \\
+ACI Learning Rate $\gamma$ & $0.01$ (adaptive conformal quantile tracking) \\
+Calibration Window & Online rolling buffer ($W = 50$ completed contacts) \\
+Utility Weighting & $w(1)=1.0, w(2)=5.0, w(3)=20.0$ (Thermal Alert Priority) \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

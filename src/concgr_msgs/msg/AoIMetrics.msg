@@ -1,0 +1,9 @@
+uint64 bundle_id
+uint32 source_id
+uint32 destination_id
+float64 t_gen
+float64 t_rx
+float64 peak_aoi_sec
+float64 deadline_sec
+bool is_deadline_met
+uint32 total_hops
