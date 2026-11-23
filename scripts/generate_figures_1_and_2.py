@@ -239,7 +239,8 @@ def generate_figure_2():
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
     plt.close()
 
-    shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig2_kangra_terrain_trajectories.png"))
+    if os.path.exists(PAPER_FIG_DIR):
+        shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig2_kangra_terrain_trajectories.png"))
     shutil.copyfile(out_path, os.path.join(ARTIFACT_DIR, "fig2_kangra_terrain_trajectories.png"))
     print(f"Generated Figure 2: {out_path}")
 

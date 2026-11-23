@@ -213,9 +213,10 @@ def generate_figure_7(df):
     # Copy to Paper Figures and Artifact directory
     paper_fig7 = "/home/jarvis/concgr_dtn_ws/paper/figures/fig7_ros2_hil_disruption_recovery.png"
     shutil_dest = os.path.join(ARTIFACT_DIR, "fig7_ros2_hil_disruption_recovery.png")
-    shutil.copyfile(OUT_FIG7, paper_fig7)
+    if os.path.exists(os.path.dirname(paper_fig7)):
+        shutil.copyfile(OUT_FIG7, paper_fig7)
+        print(f"Copied Figure 7 to Paper Figures: {paper_fig7}")
     shutil.copyfile(OUT_FIG7, shutil_dest)
-    print(f"Copied Figure 7 to Paper Figures: {paper_fig7}")
     print(f"Copied Figure 7 to Artifact Directory: {shutil_dest}")
 
 if __name__ == "__main__":

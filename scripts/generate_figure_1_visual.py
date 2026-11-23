@@ -301,9 +301,12 @@ def generate_figure_1():
     plt.close()
 
     # Distribute to all target locations
-    shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig1_concgr_architecture.png"))
-    shutil.copyfile(out_path, os.path.join(SUBMISSION_FIG_DIR, "fig1_concgr_architecture.png"))
-    shutil.copyfile(out_path, os.path.join(SUBMISSION_GA_DIR, "Graphical_Abstract.png"))
+    if os.path.exists(PAPER_FIG_DIR):
+        shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig1_concgr_architecture.png"))
+    if os.path.exists(SUBMISSION_FIG_DIR):
+        shutil.copyfile(out_path, os.path.join(SUBMISSION_FIG_DIR, "fig1_concgr_architecture.png"))
+    if os.path.exists(SUBMISSION_GA_DIR):
+        shutil.copyfile(out_path, os.path.join(SUBMISSION_GA_DIR, "Graphical_Abstract.png"))
     shutil.copyfile(out_path, os.path.join(ARTIFACT_DIR, "fig1_concgr_architecture.png"))
     print(f"Generated Visual Figure 1 at: {out_path}")
     print("Updated Paper, Submission, Graphical Abstract, and Brain Artifact copies.")

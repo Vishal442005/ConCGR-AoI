@@ -115,7 +115,8 @@ def generate_figure_3():
     plt.tight_layout()
     fig3_path = os.path.join(OUT_DIR, "fig3_nonstationary_drift_recovery.png")
     fig.savefig(fig3_path, bbox_inches='tight')
-    shutil.copyfile(fig3_path, os.path.join(PAPER_FIG_DIR, "fig3_nonstationary_drift_recovery.png"))
+    if os.path.exists(PAPER_FIG_DIR):
+        shutil.copyfile(fig3_path, os.path.join(PAPER_FIG_DIR, "fig3_nonstationary_drift_recovery.png"))
     shutil.copyfile(fig3_path, os.path.join(ARTIFACT_DIR, "fig3_nonstationary_drift_recovery.png"))
     print(f"--> Saved Visual Fig 3: {fig3_path}")
     plt.close(fig)
@@ -187,7 +188,8 @@ def generate_figure_4():
 
     fig4_path = os.path.join(OUT_DIR, "fig4_conformal_calibration_curve.png")
     fig_cal.savefig(fig4_path, bbox_inches='tight')
-    shutil.copyfile(fig4_path, os.path.join(PAPER_FIG_DIR, "fig4_conformal_calibration_curve.png"))
+    if os.path.exists(PAPER_FIG_DIR):
+        shutil.copyfile(fig4_path, os.path.join(PAPER_FIG_DIR, "fig4_conformal_calibration_curve.png"))
     shutil.copyfile(fig4_path, os.path.join(ARTIFACT_DIR, "fig4_conformal_calibration_curve.png"))
     print(f"--> Saved Visual Fig 4: {fig4_path}")
     plt.close(fig_cal)

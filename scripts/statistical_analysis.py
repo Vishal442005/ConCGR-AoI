@@ -168,7 +168,9 @@ plt.tight_layout()
 fig_path = os.path.join(OUT_DIR, "fig5_pareto_bdr_overhead_aoi.png")
 fig.savefig(fig_path, bbox_inches='tight')
 import shutil
-shutil.copyfile(fig_path, "/home/jarvis/concgr_dtn_ws/paper/figures/fig5_pareto_bdr_overhead_aoi.png")
+paper_fig = "/home/jarvis/concgr_dtn_ws/paper/figures/fig5_pareto_bdr_overhead_aoi.png"
+if os.path.exists(os.path.dirname(paper_fig)):
+    shutil.copyfile(fig_path, paper_fig)
 shutil.copyfile(fig_path, "/home/jarvis/.gemini/antigravity/brain/8a2792bb-81d2-4989-b5f6-18baa5e33c69/fig5_pareto_bdr_overhead_aoi.png")
 print(f"\n--> Saved Publication Pareto Figure: {fig_path}")
 

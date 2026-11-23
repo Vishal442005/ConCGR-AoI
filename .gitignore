@@ -14,12 +14,17 @@ __pycache__/
 *$py.class
 .pytest_cache/
 
-# LaTeX Build Intermediates (Preserves main.pdf, main.bbl, tables, and figures)
+# LaTeX Build Intermediates, Manuscripts & TeX Files
+paper/
+*.tex
+*.pdf
+*.cls
+*.bbl
+*.blg
 *.aux
 *.log
 *.out
 *.spl
-*.blg
 *.synctex.gz
 *.fls
 *.fdb_latexmk

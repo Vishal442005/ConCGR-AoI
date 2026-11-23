@@ -278,12 +278,9 @@ def main():
     paper_fig6 = "/home/jarvis/concgr_dtn_ws/paper/figures/fig6_ns3_scalability_analysis.png"
     artifact_fig6 = os.path.join(ARTIFACT_DIR, "fig6_ns3_scalability_analysis.png")
     import shutil
-    shutil.copyfile(OUT_FIG6, paper_fig6)
-    shutil.copyfile(OUT_FIG6, artifact_fig6)
-    print(f"Copied Figure 6 to Paper Figures: {paper_fig6}")
-    print(f"Copied Figure 6 to Artifact Directory: {artifact_fig6}")
-    artifact_fig6 = os.path.join(ARTIFACT_DIR, "fig6_ns3_scalability_analysis.png")
-    import shutil
+    if os.path.exists(os.path.dirname(paper_fig6)):
+        shutil.copyfile(OUT_FIG6, paper_fig6)
+        print(f"Copied Figure 6 to Paper Figures: {paper_fig6}")
     shutil.copyfile(OUT_FIG6, artifact_fig6)
     print(f"Copied Figure 6 to Artifact Directory: {artifact_fig6}")
 

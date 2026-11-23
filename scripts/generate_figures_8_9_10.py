@@ -250,7 +250,8 @@ def generate_figure_8():
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
     plt.close()
 
-    shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig8_sensor_payloads_avionics.png"))
+    if os.path.exists(PAPER_FIG_DIR):
+        shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig8_sensor_payloads_avionics.png"))
     shutil.copyfile(out_path, os.path.join(ARTIFACT_DIR, "fig8_sensor_payloads_avionics.png"))
     print(f"--> Saved Visual Fig 8: {out_path}")
 
@@ -381,7 +382,8 @@ def generate_figure_9():
     plt.savefig(out_path, dpi=300, bbox_inches="tight", pad_inches=0.15)
     plt.close()
 
-    shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig9_multihop_contact_dynamics.png"))
+    if os.path.exists(PAPER_FIG_DIR):
+        shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig9_multihop_contact_dynamics.png"))
     shutil.copyfile(out_path, os.path.join(ARTIFACT_DIR, "fig9_multihop_contact_dynamics.png"))
     print(f"--> Saved Visual Fig 9: {out_path}")
 
@@ -521,7 +523,8 @@ def generate_figure_10():
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
     plt.close()
 
-    shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig10_energy_complexity_urgency.png"))
+    if os.path.exists(PAPER_FIG_DIR):
+        shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig10_energy_complexity_urgency.png"))
     shutil.copyfile(out_path, os.path.join(ARTIFACT_DIR, "fig10_energy_complexity_urgency.png"))
     print(f"--> Saved Visual Fig 10: {out_path}")
 

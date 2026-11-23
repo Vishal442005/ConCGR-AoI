@@ -147,9 +147,10 @@ def generate_figure_7():
     print(f"--> Successfully generated high-end visual Figure 7 at: {OUT_PLOT}")
 
     # Copy to paper and artifacts
-    shutil.copyfile(OUT_PLOT, PAPER_PLOT)
+    if os.path.exists(os.path.dirname(PAPER_PLOT)):
+        shutil.copyfile(OUT_PLOT, PAPER_PLOT)
+        print(f"--> Copied Figure 7 to Paper: {PAPER_PLOT}")
     shutil.copyfile(OUT_PLOT, os.path.join(ARTIFACT_DIR, "fig7_ros2_hil_disruption_recovery.png"))
-    print(f"--> Copied Figure 7 to Paper: {PAPER_PLOT}")
     print(f"--> Copied Figure 7 to Artifact: {os.path.join(ARTIFACT_DIR, 'fig7_ros2_hil_disruption_recovery.png')}")
 
 if __name__ == "__main__":

@@ -34,11 +34,6 @@ concgr_dtn_ws/
 │   ├── run_ns3_campaign.py   # Large-scale 802.11p physical simulation campaign (117 runs)
 │   ├── statistical_analysis.py # Paired Wilcoxon signed-rank and Cliff's delta tests
 │   └── generate_*.py         # Autonomous figure generation scripts for all paper plots
-├── paper/
-│   ├── main.tex              # Complete 15-page Elsevier LaTeX manuscript
-│   ├── figures/              # High-resolution publication figures (300 DPI)
-│   ├── main.pdf              # Pre-compiled camera-ready manuscript PDF
-│   └── submission_adhoc_networks/ # Packaged submission files for Elsevier
 └── reproduce_all.sh          # Master script executing full build, test, and figure reproduction
 ```
 
@@ -86,15 +81,6 @@ python3 scripts/generate_figure_7_visual.py
 python3 scripts/generate_figures_8_9_10.py
 ```
 
-### 7. Compiling the Manuscript
-```bash
-cd paper
-pdflatex -interaction=nonstopmode main.tex
-bibtex main
-pdflatex -interaction=nonstopmode main.tex
-pdflatex -interaction=nonstopmode main.tex
-```
-
 ---
 
 ## One-Click Reproduction
@@ -103,6 +89,21 @@ To run the complete pipeline end-to-end:
 ```bash
 chmod +x reproduce_all.sh
 ./reproduce_all.sh
+```
+
+---
+
+## Citation & Zenodo DOI
+
+```bibtex
+@software{chandel2026concgr,
+  author       = {Vishal Chandel},
+  title        = {{ConCGR-AoI: Distribution-Free Conformal Contact-Graph Routing for Real-Time Telemetry in Disrupted Flying Ad-Hoc Networks}},
+  year         = {2026},
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  url          = {https://github.com/Vishal442005/ConCGR-AoI}
+}
 ```
 
 ---

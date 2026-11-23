@@ -35,7 +35,7 @@ echo "[4/6] Running statistical significance tests (Wilcoxon signed-rank)..."
 python3 scripts/statistical_analysis.py
 
 # 5. Regenerate all 10 publication figures
-echo "[5/6] Regenerating publication-quality Figures 1 to 10..."
+echo "[5/5] Regenerating publication-quality Figures 1 to 10..."
 python3 scripts/generate_figure_1_visual.py
 python3 scripts/generate_figures_1_and_2.py
 python3 scripts/generate_publication_figures.py
@@ -43,17 +43,7 @@ python3 scripts/generate_ns3_scalability_artifacts.py
 python3 scripts/generate_figure_7_visual.py
 python3 scripts/generate_figures_8_9_10.py
 
-# 6. Compile LaTeX manuscript
-echo "[6/6] Compiling LaTeX manuscript PDF..."
-cd paper
-pdflatex -interaction=nonstopmode main.tex > /dev/null || true
-bibtex main > /dev/null || true
-pdflatex -interaction=nonstopmode main.tex > /dev/null || true
-pdflatex -interaction=nonstopmode main.tex > /dev/null || true
-cd "${SCRIPT_DIR}"
-
 echo "======================================================================="
 echo "   REPRODUCTION COMPLETE: All artifacts verified successfully!"
-echo "   Manuscript PDF: paper/main.pdf"
-echo "   Figures: data/plots/ and paper/figures/"
+echo "   Publication Figures: data/plots/ (Figures 1 through 10)"
 echo "======================================================================="
