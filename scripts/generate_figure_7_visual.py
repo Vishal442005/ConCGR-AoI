@@ -43,53 +43,54 @@ def generate_figure_7():
     # Shaded Blackout Zone in ax1 and ax2
     for ax in (ax1, ax2):
         ax.axvspan(x_start, x_end, color='#FFCDD2', alpha=0.45, hatch='//',
-                   label='20s Mountain Blackout (ITU-R P.526 Occlusion)' if ax == ax1 else None, zorder=2)
+                   label='20s Mountain Blackout (ITU-R P.526)' if ax == ax1 else None, zorder=2)
         ax.axvline(x_start, color='#C62828', linestyle='--', lw=1.8, alpha=0.8, zorder=3)
         ax.axvline(x_end, color='#2E7D32', linestyle='--', lw=1.8, alpha=0.8, zorder=3)
         ax.grid(True, ls='--', alpha=0.45, zorder=1)
 
     # ConCGR-AoI Cumulative Curve
     ax1.plot(x, dtn_cum, color='#2E7D32', lw=3.2, marker='o', markersize=6.5,
-             label='ConCGR-AoI (DTN Custody Transfer & Rapid Drain)', zorder=5)
+             label='ConCGR-AoI (Custody Transfer)', zorder=5)
     ax1.fill_between(x, 0, dtn_cum, color='#C8E6C9', alpha=0.35, zorder=3)
 
     # CycloneDDS Cumulative Curve
     ax1.plot(x, dds_cum, color='#D32F2F', lw=2.6, ls='--', marker='x', markersize=7.5,
-             markeredgewidth=2.0, label='Native ROS 2 CycloneDDS (Bufferless UDP Drops)', zorder=4)
+             markeredgewidth=2.0, label='Native CycloneDDS (Bufferless Drops)', zorder=4)
 
     # Annotate dropped datagrams along CycloneDDS
     drop_x = x[blackout_indices]
     drop_y = np.full_like(drop_x, dds_cum[blackout_indices[0]])
     ax1.scatter(drop_x, drop_y, color='#B71C1C', s=35, marker='v', alpha=0.7, zorder=6,
-                label='CycloneDDS Dropped Datagrams (20 Pkts)')
+                label='CycloneDDS Dropped (20 Pkts)')
 
-    # Callout for ConCGR backlog drain (repositioned inside plot bounds, pointing down-right)
-    ax1.annotate(r"$\mathbf{Immediate\ Backlog\ Drain:}$" + "\nAll 20 queued bundles burst across\nin 42 ms upon LoS clearance (33/33 total, 100%)",
-                 xy=(x_end + 0.5, dtn_cum.iloc[blackout_indices[-1] + 1]),
-                 xytext=(16.5, 28.5),
-                 arrowprops=dict(facecolor='black', edgecolor='black', shrink=0.05, width=1.4, headwidth=7),
-                 fontsize=10, fontweight='bold', color='black',
-                 bbox=dict(boxstyle="round,pad=0.35", fc="white", ec="black", lw=1.0, alpha=0.96), zorder=12)
+    # Callout for ConCGR backlog drain (positioned at x=15.5, y=30.0 pointing down-right to (23.5, 23.5))
+    ax1.annotate(r"$\mathbf{Immediate\ Backlog\ Drain:}$" + "\nAll 20 queued bundles burst across\nin 42 ms upon LoS clearance",
+                 xy=(23.5, 23.5),
+                 xytext=(15.5, 30.0),
+                 arrowprops=dict(facecolor='black', edgecolor='black', shrink=0.06, width=1.4, headwidth=7),
+                 fontsize=9.2, fontweight='bold', color='black',
+                 bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1.0, alpha=0.96), zorder=12)
 
     # Callout for CycloneDDS flatline
     ax1.annotate(r"$\mathbf{Bufferless\ Socket\ Drop:}$" + "\n0/20 blackout bundles delivered\n(60.6% total mission data loss)",
-                 xy=(13, dds_cum.iloc[blackout_indices[10]]),
-                 xytext=(6.5, 12.0),
-                 arrowprops=dict(facecolor='black', edgecolor='black', shrink=0.05, width=1.4, headwidth=7),
-                 fontsize=10, fontweight='bold', color='black',
-                 bbox=dict(boxstyle="round,pad=0.35", fc="white", ec="black", lw=1.0, alpha=0.96), zorder=12)
+                 xy=(13.0, 3.5),
+                 xytext=(4.5, 12.0),
+                 arrowprops=dict(facecolor='black', edgecolor='black', shrink=0.06, width=1.4, headwidth=7),
+                 fontsize=9.2, fontweight='bold', color='black',
+                 bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1.0, alpha=0.96), zorder=12)
 
-    # Blackout label banner (placed at y=38.5, well above all curves and clear of upper-left legend)
-    ax1.text((x_start + x_end) / 2.0, 38.5, "MOUNTAIN RIDGE OCCLUSION BLACKOUT (20 SECONDS)",
-             ha='center', va='center', fontsize=10.5, fontweight='bold', color='black',
-             bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1.0, alpha=0.96), zorder=12)
+    # Blackout label banner (placed at x=18.5, y=41.5, completely clear of the upper-left legend at x<=8.5)
+    ax1.text(18.5, 41.5, "20s MOUNTAIN RIDGE OCCLUSION BLACKOUT",
+             ha='center', va='center', fontsize=9.5, fontweight='bold', color='black',
+             bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="black", lw=1.0, alpha=0.96), zorder=12)
 
     ax1.set_ylabel('Cumulative Delivered Bundles', fontsize=13, fontweight='bold')
     ax1.set_title('(a) Real-Time Payload Delivery Resilience across 20s Mountain Blackout (Hardware-in-the-Loop Testbed)',
                   fontsize=14, fontweight='bold', pad=12)
     ax1.tick_params(axis='both', labelsize=11.5)
-    ax1.legend(loc='upper left', framealpha=0.95, fontsize=10.5)
-    ax1.set_ylim(-1, 42)
+    ax1.legend(loc='upper left', framealpha=0.96, fontsize=9.2)
+    ax1.set_xlim(-1, 34)
+    ax1.set_ylim(-2, 45)
 
     # -------------------------------------------------------------------------
     # Panel 7(b): Real-Time Peak AoI Freshness

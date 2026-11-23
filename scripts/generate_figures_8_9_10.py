@@ -181,18 +181,22 @@ def generate_figure_8():
     ax3_alt.plot(t_sec, alt, color=PALETTE['green'], lw=2.4, ls=':', label=r'Altitude $z$ (m AGL)')
     ax3_alt.set_ylabel("Altitude (m AGL)", fontsize=12, fontweight="bold", color=PALETTE['green'])
     ax3_alt.tick_params(axis='y', labelsize=11, labelcolor=PALETTE['green'])
-    ax3_alt.set_ylim(alt.min() - 8, alt.max() + 15)
+    ax3_alt.set_ylim(-2, 16)
 
-    # PID stabilization callout: placed safely in center to avoid right y-axis overlap
-    ax3.annotate("Cascaded PID Correction:\nAttitude restored to $\\pm 1.2^\\circ$\nwithin 1.4s of gust peak",
-                 xy=(20.5, roll[205]), xytext=(12.5, -17.5),
-                 arrowprops=dict(facecolor='black', edgecolor='black', shrink=0.05, width=1.4, headwidth=7),
-                 fontsize=9.5, fontweight='bold', color='black',
+    ax3.set_ylim(-65, 115)
+    ax3.set_xlim(-0.5, 25.5)
+
+    # PID stabilization callout: placed safely in upper right with positive clearance
+    ax3.annotate(r"$\mathbf{Cascaded\ PID\ Correction:}$" + "\nAttitude restored to $\\pm 1.2^\\circ$\nwithin 1.4s of gust peak",
+                 xy=(20.5, roll[205]), xytext=(19.2, 85.0),
+                 ha='center', va='center',
+                 arrowprops=dict(facecolor='black', edgecolor='black', shrink=0.06, width=1.3, headwidth=6),
+                 fontsize=9.0, fontweight='bold', color='black',
                  bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1.0, alpha=0.96))
 
     lines1, labels1 = ax3.get_legend_handles_labels()
     lines2, labels2 = ax3_alt.get_legend_handles_labels()
-    ax3.legend(lines1 + lines2, labels1 + labels2, loc='upper left', fontsize=10, framealpha=0.94)
+    ax3.legend(lines1 + lines2, labels1 + labels2, loc='upper left', ncol=2, fontsize=8.2, framealpha=0.94)
 
     # -------------------------------------------------------------------------
     # 4. Multi-Modal Heterogeneous Traffic Distribution & Header Overhead
@@ -257,8 +261,8 @@ def generate_figure_9():
     print("Generating High-End Visual Figure 9: Multi-Hop Contact Graph Dynamics...")
     fig, ax = plt.subplots(figsize=(16, 8.5), dpi=300)
     
-    ax.set_xlim(-5, 125)
-    ax.set_ylim(-5, 45)
+    ax.set_xlim(-8, 128)
+    ax.set_ylim(-5, 46)
     
     nodes = [36, 24, 12, 0]
     node_labels = [
@@ -287,26 +291,26 @@ def generate_figure_9():
     ax.barh(36, 37, left=8, height=4.2, color='#FFE082', alpha=0.55, hatch='//', edgecolor='#FFA000', lw=1.4)
     # Nominal contact bar
     ax.barh(36, 25, left=10, height=3.2, color='#81D4FA', alpha=0.85, edgecolor='#0277BD', lw=1.5)
-    ax.text(22.5, 36, r"Contact $c_1$: Rate $6$ Mbps (Nominal $[10, 35]$ s)", ha='center', va='center',
+    ax.text(28.0, 39.2, r"Contact $c_1$: Rate $6$ Mbps (Nominal $[10, 35]$ s)", ha='center', va='bottom',
             fontsize=10.5, fontweight='bold', color='black')
 
     # Contact 2: UAV 2 -> UAV 3 [Nominal: 32 - 60s, Conformal: 30 - 72s]
     ax.barh(24, 42, left=30, height=4.2, color='#FFE082', alpha=0.55, hatch='//', edgecolor='#FFA000', lw=1.4)
     ax.barh(24, 28, left=32, height=3.2, color='#81D4FA', alpha=0.85, edgecolor='#0277BD', lw=1.5)
-    ax.text(46, 24, r"Contact $c_2$: Rate $6$ Mbps (Nominal $[32, 60]$ s)", ha='center', va='center',
+    ax.text(52.0, 24.0, r"Contact $c_2$: Rate $6$ Mbps (Nominal $[32, 60]$ s)", ha='center', va='center',
             fontsize=10.5, fontweight='bold', color='black')
 
     # Contact 3: UAV 3 -> Sink [Nominal: 58 - 90s, Conformal: 56 - 105s]
     ax.barh(12, 49, left=56, height=4.2, color='#FFE082', alpha=0.55, hatch='//', edgecolor='#FFA000', lw=1.4)
     ax.barh(12, 32, left=58, height=3.2, color='#81D4FA', alpha=0.85, edgecolor='#0277BD', lw=1.5)
-    ax.text(74, 12, r"Contact $c_3$: Rate $6$ Mbps (Nominal $[58, 90]$ s)", ha='center', va='center',
+    ax.text(78.0, 12.0, r"Contact $c_3$: Rate $6$ Mbps (Nominal $[58, 90]$ s)", ha='center', va='center',
             fontsize=10.5, fontweight='bold', color='black')
 
     # -------------------------------------------------------------------------
     # Mountain Ridge Occlusion Blackout Shadow (ITU-R P.526 > 35 dB)
     # -------------------------------------------------------------------------
     ax.axvspan(76, 108, color='#FFCDD2', alpha=0.35, hatch='\\\\', edgecolor='#E57373', lw=1.2)
-    ax.text(92, 41.2, "MOUNTAIN RIDGE OCCLUSION BLACKOUT\n(ITU-R P.526 Path Loss > 35 dB)",
+    ax.text(92.0, 41.5, "MOUNTAIN RIDGE OCCLUSION BLACKOUT\n(ITU-R P.526 Path Loss > 35 dB)",
             ha='center', va='center', color='black', fontsize=10.5, fontweight='bold',
             bbox=dict(boxstyle="round,pad=0.35", fc="white", ec="black", lw=1.0, alpha=0.96))
 
@@ -350,7 +354,7 @@ def generate_figure_9():
     ax.annotate("", xy=(38, 23.0), xytext=(34, 35.5),
                 arrowprops=dict(arrowstyle="->", lw=2.2, color='#C62828', ls='--'))
     ax.scatter([38], [23], color='#D32F2F', s=160, marker='X', zorder=10)
-    ax.text(39.5, 28.5, r"$\mathbf{Deterministic\ CGR\ Miss:}$" + "\nWind drift delays contact arrival;\nWindow expired $\\rightarrow$ Dropped!",
+    ax.text(48.0, 31.0, r"$\mathbf{Deterministic\ CGR\ Miss:}$" + "\nWind drift delays contact arrival;\nWindow expired $\\rightarrow$ Dropped!",
             fontsize=9.8, fontweight='bold', color='black',
             bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="black", lw=1.0, alpha=0.94))
 
@@ -372,9 +376,9 @@ def generate_figure_9():
     ax.text(65, -2.25, "PHASE 2: RIDGE RELAY FORWARDING", ha='center', va='center', fontsize=9.5, fontweight='bold', color='#37474F')
     ax.text(105, -2.25, "PHASE 3: SINK INGESTION & POST-BLACKOUT BURST", ha='center', va='center', fontsize=9.5, fontweight='bold', color='#37474F')
 
-    fig.subplots_adjust(left=0.18, right=0.96, top=0.92, bottom=0.10)
+    fig.subplots_adjust(left=0.20, right=0.96, top=0.92, bottom=0.10)
     out_path = os.path.join(OUT_DIR, "fig9_multihop_contact_dynamics.png")
-    plt.savefig(out_path, dpi=300, bbox_inches="tight")
+    plt.savefig(out_path, dpi=300, bbox_inches="tight", pad_inches=0.15)
     plt.close()
 
     shutil.copyfile(out_path, os.path.join(PAPER_FIG_DIR, "fig9_multihop_contact_dynamics.png"))
