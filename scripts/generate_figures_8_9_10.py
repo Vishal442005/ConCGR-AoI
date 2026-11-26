@@ -369,7 +369,8 @@ def generate_figure_9():
     p5 = plt.Line2D([0], [0], color='#00796B', lw=2.0, ls=':', label='Reliable Custody ACK Handshake')
     p6 = plt.Line2D([0], [0], color='#C62828', lw=2.2, ls='--', marker='X', markersize=8, label='Deterministic CGR Contact Drop')
 
-    ax.legend(handles=[p1, p2, p3, p4, p5, p6], loc='lower right', fontsize=10.5, framealpha=0.96)
+    ax.legend(handles=[p1, p2, p3, p4, p5, p6], loc='upper center',
+              bbox_to_anchor=(0.5, -0.11), ncol=2, fontsize=10.2, framealpha=0.96, frameon=True)
 
     # Mission phase bar at bottom
     ax.axhspan(-3.5, -1.0, color='#ECEFF1', alpha=0.9)

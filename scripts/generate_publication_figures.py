@@ -65,19 +65,19 @@ def generate_figure_3():
     e_smooth = np.convolve(e_s_true, np.ones(window)/window, mode='same')
     ax1.plot(t_steps[2:-2], e_smooth[2:-2], color='#B71C1C', lw=3.2, label='Smoothed Contact Drift Trend')
 
-    # Annotations for regimes
-    ax1.text(300, 52, "STATIONARY REGIME\n(Mean Lag $\\mu = 2.1$ s)", ha='center', va='center',
+    # Annotations for regimes (placed in open areas clear of legend and spikes)
+    ax1.text(300, 26, "STATIONARY REGIME\n(Mean Lag $\\mu = 2.1$ s)", ha='center', va='center',
              fontsize=11, fontweight='bold', color='black',
              bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1.0, alpha=0.96))
-    ax1.text(900, 52, "NON-STATIONARY TURBULENCE\n(Wind Gusts $\\leq 18.2$ m/s, Mean $\\mu = 22.4$ s)", ha='center', va='center',
+    ax1.text(900, 58, "NON-STATIONARY TURBULENCE\n(Wind Gusts $\\leq 18.2$ m/s, Mean $\\mu = 22.4$ s)", ha='center', va='center',
              fontsize=11, fontweight='bold', color='black',
              bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1.0, alpha=0.96))
 
     ax1.set_ylabel("Contact Lag $e_s$ (s)", fontsize=13, fontweight='bold')
     ax1.set_title("(a) Realized Contact Schedule Perturbation over Kangra Ridge DEM", fontweight='bold', fontsize=14, pad=12)
     ax1.tick_params(axis='both', labelsize=11.5)
-    ax1.legend(loc='upper left', fontsize=11, framealpha=0.96)
-    ax1.set_ylim(-2, 62)
+    ax1.legend(loc='upper left', fontsize=10.5, framealpha=0.96)
+    ax1.set_ylim(-2, 68)
 
     # Panel 2: ACI Adaptive Margin
     ax2.fill_between(t_steps, 0, q_s_aci, color='#81D4FA', alpha=0.35)
